@@ -11,5 +11,9 @@ abstract class RestClient {
   factory RestClient(Dio dio, {String? baseUrl}) = _RestClient;
 
   @GET('/currencies')
-  Future<ApiResponse<List<Currency>>> getCurrencies();
+  Future<ApiResponse<List<Currency>>> getCurrencies({
+    @Query('optionalFields') required List<String> optionalFields,
+    @Query('limit') int limit = 20,
+    @Query('offset') int offset = 0,
+  });
 }

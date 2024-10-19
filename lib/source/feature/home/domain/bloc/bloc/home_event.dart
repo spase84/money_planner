@@ -4,3 +4,5 @@ part of 'home_bloc.dart';
 sealed class HomeEvent {}
 
 class LoadCurrenciesEvent extends HomeEvent {}
+
+class LoadMoreCurrenciesEvent extends HomeEvent {}

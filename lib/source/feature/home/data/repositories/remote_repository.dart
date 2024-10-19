@@ -10,5 +10,9 @@ class Home$RemoteRepository implements HomeRepository {
   Home$RemoteRepository(this.remoteDataSource);
 
   @override
-  Future<List<Currency>> getCurrencies() => remoteDataSource.getCurrencies();
+  Future<List<Currency>> getCurrencies({
+    required int offset,
+    required int limit,
+  }) =>
+      remoteDataSource.getCurrencies(offset: offset, limit: limit);
 }

@@ -21,6 +21,7 @@ dependencies:
   dio: ^5.7.0
   retrofit: ^4.4.0
   logger: ^2.4.0  # for logging purpose
+  cached_network_image: ^3.4.1
 
   # DI
   injectable: ^2.5.0
@@ -32,6 +33,11 @@ dependencies:
   # ENV
   flutter_dotenv: ^5.2.1
 
+  # UTILS
+  infinite_scroll_pagination: ^4.0.0
+
+
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

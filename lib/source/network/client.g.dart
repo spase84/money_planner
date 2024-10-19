@@ -24,9 +24,17 @@ class _RestClient implements RestClient {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<ApiResponse<List<Currency>>> getCurrencies() async {
+  Future<ApiResponse<List<Currency>>> getCurrencies({
+    required List<String> optionalFields,
+    int limit = 20,
+    int offset = 0,
+  }) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'optionalFields': optionalFields,
+      r'limit': limit,
+      r'offset': offset,
+    };
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<ApiResponse<List<Currency>>>(Options(

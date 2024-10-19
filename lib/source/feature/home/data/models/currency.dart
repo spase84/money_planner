@@ -26,4 +26,6 @@ class Currency {
 
   factory Currency.fromJson(Map<String, dynamic> json) =>
       _$CurrencyFromJson(json);
+
+  double get usdPrice => values['USD']?.price.toDouble() ?? 0;
 }

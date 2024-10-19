@@ -20,8 +20,12 @@ final class HomeRemoteDataSource implements Home$DataSource {
   }
 
   @override
-  Future<List<Currency>> getCurrencies() async {
-    final response = await _client.getCurrencies();
+  Future<List<Currency>> getCurrencies({
+    required int offset,
+    required int limit,
+  }) async {
+    final response = await _client.getCurrencies(
+        optionalFields: ['images'], limit: limit, offset: offset);
     if (response.status?.success == true) {
       return response.data ?? [];
     }
